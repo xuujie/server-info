@@ -12,7 +12,7 @@ ls -la
     }
   }
   environment {
-    https_proxy = 'proxy.ncs.com.sg:8080'
-    http_proxy = 'proxy.ncs.com.sg:8080'
+    HTTPS_PROXY = 'proxy.ncs.com.sg:8080'
+    HTTP_PROXY = 'proxy.ncs.com.sg:8080'
   }
 }
