@@ -9,4 +9,7 @@ chmod 777 ./gradlew
       }
     }
   }
+  environment {
+    https_proxy = 'proxy.ncs.com.sg:8080'
+  }
 }
