@@ -8,7 +8,7 @@
     ```
 3. Run container on port 8080
     ```bash
-    docker run -d --name host-info -p 8080:8080 xuujie/server-info:latest
+    docker run -d --name server-info -p 8080:8080 xuujie/server-info:latest
     ```
 4. Clean up
     ```bash
