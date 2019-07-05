@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-info
+spec:
+  selector:
+    matchLabels:
+      app: server-info
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: server-info
+    spec:
+      containers:
+        - name: server-info
+          image: xuujie/server-info:latest
+          ports:
+            - containerPort: 8080
