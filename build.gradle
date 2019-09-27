@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
 	id 'java'
 }
 
@@ -17,6 +17,5 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.slf4j:slf4j-api:1.7.28'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
