@@ -1,5 +1,4 @@
 logging:
-  file: logs/system-info.log
   level:
     root: INFO
-    com.xujie.serverinfo: DEBUG
+    com.xujie.system.info: DEBUG
