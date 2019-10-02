@@ -15,5 +15,8 @@ spec:
       containers:
         - name: system-info
           image: xuujie/system-info:latest
+          env:
+            - name: SPLUNK_HOST
+              value: 192.168.1.77
           ports:
             - containerPort: 8080

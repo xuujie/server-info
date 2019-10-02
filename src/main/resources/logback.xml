@@ -6,8 +6,9 @@
         </encoder>
     </appender>
     <appender name="HTTP" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
-        <url>http://localhost:8088</url>
-        <token>81e5b875-49f4-4b56-b665-0798db45e305</token>
+        <url>https://${SPLUNK_HOST}:8088</url>
+        <batch_size_count>1</batch_size_count>
+        <token>abcd1234</token>
         <disableCertificateValidation>true</disableCertificateValidation>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n</pattern>
