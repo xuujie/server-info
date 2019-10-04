@@ -2,11 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: system-info
+  labels:
+    app: system-info
 spec:
   selector:
     matchLabels:
       app: system-info
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 5 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -17,7 +19,7 @@ spec:
           image: xuujie/system-info:latest
           env:
             - name: SPLUNK_HOST
-              value: 192.168.1.77
+              value: 17.82.205.168
             - name: USER_HOST
               value: system-info-container
           ports:
