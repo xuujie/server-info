@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM openjdk:11-jdk
 
 ENV DEPLOYMENT_DIR /system-info
 
