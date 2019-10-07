@@ -20,7 +20,5 @@ spec:
           env:
             - name: SPLUNK_HOST
               value: 17.82.205.168
-            - name: USER_HOST
-              value: system-info-container
           ports:
             - containerPort: 8080
