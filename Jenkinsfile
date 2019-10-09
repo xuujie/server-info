@@ -9,5 +9,10 @@ ls -la
 ls -la build/libs'''
       }
     }
+    stage('Docker Image') {
+      steps {
+        sh 'docker build -t xuujie/system-info:latest .'
+      }
+    }
   }
 }
