@@ -6,7 +6,7 @@
         </encoder>
     </appender>
     <appender name="HTTP" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
-        <url>https://${SPLUNK_HOST}:8088</url>
+        <url>${SPLUNK_HOST}</url>
         <host>${HOSTNAME}</host>
         <batch_size_count>1</batch_size_count>
         <token>abcd1234</token>
