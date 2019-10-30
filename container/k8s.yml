@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: system-info
+  labels:
+    app: system-info
+spec:
+  selector:
+    matchLabels:
+      app: system-info
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: system-info
+    spec:
+      containers:
+        - name: system-info
+          image: xuujie/system-info:latest
+          env:
+            - name: SPLUNK_HOST
+              value: 17.82.205.168
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: system-info-service
+spec:
+  selector:
+    app: system-info
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: system-info-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: system-info-service
+              servicePort: 80
