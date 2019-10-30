@@ -1,0 +1,5 @@
+version: "3.7"
+services:
+  jmeter-system-info:
+    image: xuujie/jmeter-system-info:latest
+    container_name: jmeter-system-info
