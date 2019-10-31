@@ -1,19 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jmeter-system-info
+  name: jmeter-system-info-test
   labels:
-    app: jmeter-system-info
+    app: jmeter-system-info-test
 spec:
   selector:
     matchLabels:
-      app: jmeter-system-info
+      app: jmeter-system-info-test
   replicas: 1
   template:
     metadata:
       labels:
-        app: jmeter-system-info
+        app: jmeter-system-info-test
     spec:
       containers:
-        - name: jmeter-system-info
-          image: xuujie/jmeter-system-info:latest
+        - name: jmeter-system-info-test
+          image: xuujie/jmeter-system-info:test
+          volumeMounts:
+            - name: config-volume
+              mountPath: /tmp/test/
+          command: ["/bin/bash", "-c", "jmeter -n -t /tmp/test/system-info-test.jmx"]
+      volumes:
+        - name: config-volume
+          configMap:
+            name: jmeter-test-plan
