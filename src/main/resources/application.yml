@@ -2,3 +2,9 @@ logging:
   level:
     root: INFO
     com.xujie.system.info: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
