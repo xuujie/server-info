@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  system-info:
+    image: xuujie/system-info:latest
+    container_name: system-info
+    ports:
+      - 8080:8080
