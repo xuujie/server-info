@@ -17,6 +17,7 @@ public class HomeController {
         Map<String, String> endpointMap = new HashMap<>();
         endpointMap.put("server", "/server");
         endpointMap.put("client", "/client");
+        endpointMap.put("actuator", "/actuator");
         map.put("endpoints", endpointMap);
         return map;
     }
